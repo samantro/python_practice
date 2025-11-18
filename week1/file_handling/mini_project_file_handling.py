@@ -23,24 +23,24 @@ import csv, json
 
 # Write cleaned data to CSV and JSON files
 
-with open('file_handling/cleaned.csv', 'w', newline='') as csvfile:
+with open('cleaned.csv', 'w', newline='') as csvfile:
     fieldnames = ['name', 'age', 'city']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(cleaned_data)
 
-with open('file_handling/cleaned.json', 'w') as jsonfile:
+with open('cleaned.json', 'w') as jsonfile:
     json.dump(cleaned_data, jsonfile, indent=2)
 
 # Read back the data from CSV and JSON files to verify
 
-with open('file_handling/cleaned.csv', 'r') as csvfile:
+with open('cleaned.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     print("Data read from cleaned.csv:")
     for row in reader:
         print(row)
 
-with open('file_handling/cleaned.json', 'r') as jsonfile:
+with open('cleaned.json', 'r') as jsonfile:
     data = json.load(jsonfile)
     print("Data read from cleaned.json:")
     print(data)
